@@ -27,11 +27,9 @@ return (
         <ChevronRight className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
       </div>
       <h1 className="animate-fade-in text-balance bg-gradient-to-br from-black from-30% to-black/40 bg-clip-text py-6 text-5xl font-medium leading-none tracking-tighter text-transparent [--animation-delay:200ms] dark:from-white dark:to-white/40 sm:text-6xl md:text-7xl lg:text-8xl">
-        <RoughNotation order={1} type="circle" color="gray" animationDelay={1000} >
-          <span>
-            Automatisez.
-          </span>
-        </RoughNotation>
+        <span>
+          Automatisez.
+        </span>
         {" "}
         <span>
           Scalez. Gagnez.
