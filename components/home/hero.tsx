@@ -2,7 +2,7 @@
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes"; ;
-import { Star, ChevronRight } from "lucide-react";
+import { Star, ChevronRight, ChevronDown } from "lucide-react";
 
 export default function Hero() { const ANIM_DURATION = parseFloat("2");
 const ANIM_EASING = JSON.parse("[0.42,0,0.58,1]");
@@ -48,6 +48,12 @@ return (
           <ChevronRight className="translate-y-0.5 ml-2 size-4 transition-all duration-300 ease-in-out group-hover:translate-x-2 text-black" />
         </div>
       </a>
+      <div className="mt-8 flex flex-col items-center gap-2">
+        <span className="text-sm text-[#01E7B9] font-medium">Découvrir</span>
+        <div className="animate-bounce">
+          <ChevronDown className="size-8 text-[#01E7B9]" />
+        </div>
+      </div>
       <div className="relative group mt-14 mx-2 md:mx-0">
         <img width={1200} height={1200} fetchPriority="high" loading="eager" src={theme === "light" ? "/images/dashboard_light.png" : "/images/dashboard_dark.png"} className="w-full md:w-[1200px] mx-auto rounded-lg relative leading-none flex items-center border border-t-2 border-secondary border-t-primary/30 shadow-xl" />
         <div className="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg" />
