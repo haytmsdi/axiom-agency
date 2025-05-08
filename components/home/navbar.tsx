@@ -4,8 +4,10 @@ import ToggleTheme from "@/components/toggle-theme";
 import cn from "@/lib/utils";
 import { motion } from "framer-motion"; ;
 import { Menu, X } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export default function Navbar() { const [isOpen, setIsOpen] = useState(false);
+const { theme } = useTheme();
 const routeList = [ { label: "Nos Services", href: "#services4" }, { label: "Notre Processus", href: "#steps4" }, { label: "FAQ", href: "#faq" }, { label: "", href: "#" }, ];
 const ANIM_DURATION = parseFloat("0");
 const ANIM_EASING = JSON.parse("[0,0,1,1]");
@@ -20,7 +22,7 @@ return (
     <div className="hidden lg:block animate-in fade-in zoom-in p-4">
       <div className="max-w-7xl mx-auto px-3 md:px-6 lg:px-0 flex justify-between items-center">
         <a className="font-bold text-xl flex gap-3 items-center" href="/">
-          <img src="/images/axiom_logo.png" className="object-contain h-9" />
+          <img src={theme === "light" ? "/images/axiom_logo_white.png" : "/images/axiom_logo.png"} className="object-contain h-9" />
         </a>
         <div className="flex items-center gap-[10px] select-none">
           {routeList.map(({ label, href }, index) => { 
@@ -43,7 +45,7 @@ return (
   <div className="flex justify-between mx-[10px]">
     <div className="flex gap-[50px] text-[16px] items-center select-none">
       <a className="font-bold text-xl flex gap-2 items-center" href="/">
-        <img src="/images/axiom_logo.png" className="object-contain h-8" />
+        <img src={theme === "light" ? "/images/axiom_logo_white.png" : "/images/axiom_logo.png"} className="object-contain h-8" />
       </a>
     </div>
     <div className="flex items-center gap-1">
