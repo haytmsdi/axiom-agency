@@ -7,7 +7,7 @@ const TRANSITION_ANIM_TYPE = "FADE_IN";
 const transitionVariants: any = { FADE_IN: { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: ANIM_DURATION, ease: ANIM_EASING } }, }, SLIDE_IN_LEFT: { hidden: { x: -50, opacity: 0 }, show: { x: 0, opacity: 1, transition: { duration: ANIM_DURATION, ease: ANIM_EASING } }, }, SLIDE_IN_RIGHT: { hidden: { x: 50, opacity: 0 }, show: { x: 0, opacity: 1, transition: { duration: ANIM_DURATION, ease: ANIM_EASING } }, }, ZOOM_IN: { hidden: { scale: 0.8, opacity: 0 }, show: { scale: 1, opacity: 1, transition: { duration: ANIM_DURATION, ease: ANIM_EASING } }, }, FLIP_IN_X: { hidden: { rotateX: 90, opacity: 0, transformPerspective: 600 }, show: { rotateX: 0, opacity: 1, transition: { duration: ANIM_DURATION, ease: ANIM_EASING } }, }, FLIP_IN_Y: { hidden: { rotateY: 90, opacity: 0, transformPerspective: 600 }, show: { rotateY: 0, opacity: 1, transition: { duration: ANIM_DURATION, ease: ANIM_EASING } }, }, };
 const SectionTag = motion.section;
 const transitionProps = { variants: transitionVariants[TRANSITION_ANIM_TYPE], initial: "hidden", whileInView:"show", viewport: { once: true, amount: 0 }, };
-const logos = [ "/images/635cb8fee9698842c765679b9a5221aa.avif", "/images/1a1e47b61804be61fbbec1359ba2b86b.svg", "/images/fde188b2f4a18e2fd5928c109518ee46.png", "/images/2b8551a2a8e410028e45807de180be4f.png", "/images/0171397d0dd599809e6eff881af6fb32.jpg", ];
+const logos = [ "/images/n8n_logo.avif", "/images/slack_logo.png", "/images/vercel_logo.png", "/images/react_logo.png", "/images/supabase_logo.png", ];
 
 return (
 
