@@ -21,7 +21,12 @@ return (
       <div className="w-full flex justify-evenly items-center lg:mx-10">
         {logos.map((logo, index) => (
           <div className="flex justify-center items-center" key={index}>
-            <img width={120} loading="lazy" src={logo} className="h-16 w-fit" />
+            <img 
+              src={logo} 
+              alt={`Logo ${index + 1}`}
+              className="h-16 w-auto object-contain"
+              loading="lazy"
+            />
           </div>
         ))}
       </div>

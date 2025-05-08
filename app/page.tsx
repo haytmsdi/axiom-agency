@@ -4,7 +4,7 @@ import Logos from "@/components/home/logos";
 import Steps4 from "@/components/home/steps4";
 import Faq from "@/components/home/faq";
 import Cta from "@/components/home/cta";
-import Particles from "@/components/particles/particles";
+import ParticleNetwork from "@/components/particle-network/particle-network";
 import FilloutEmbed from "@/components/home/fillout-embed";
 
 export default function HomePage() {
@@ -19,7 +19,7 @@ export default function HomePage() {
         <Faq />
         <Cta />
       </div>
-      <Particles className="absolute inset-0 pointer-events-none z-20" quantity={15} shouldAdaptToTheme={true} />
+      <ParticleNetwork />
     </>
   );
 }
