@@ -127,6 +127,5 @@ return (
         </span>
       </a>
     </div>
-    <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden h-[14rem] w-[14rem] rounded-full border-2 border-primary opacity-10 before:absolute before:left-1/2 before:top-1/2 before:block before:h-[18rem] before:w-[18rem] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:border-2 before:border-primary before:opacity-60 after:absolute after:left-1/2 after:top-1/2 after:block after:h-[22rem] after:w-[22rem] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:border-2 after:border-primary after:opacity-30 lg:block" />
   </SectionTag>
 ); }
