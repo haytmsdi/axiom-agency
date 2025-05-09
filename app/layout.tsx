@@ -6,8 +6,8 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
-  title: "Create Next App",
-  description: "Welcome to Webifier.io! This website was built with Next.JS",
+  title: "Axiom | Automatisez et scalez votre business",
+  description: "Libérez le potentiel de votre business. Solutions d'automatisation intelligentes pour optimiser vos processus et accélérer votre croissance.",
 };
 
 export default function RootLayout({
