@@ -16,7 +16,7 @@ return (
     <div className="mx-auto flex w-full flex-wrap justify-between gap-6 lg:max-w-7xl lg:flex-nowrap lg:gap-20">
       <div className="w-full lg:w-[30%] lg:max-w-[24rem]">
         <a className="mb-6 block" href="/">
-          <img src="/images/favicon_axiom.png" className="h-14 w-fit" />
+          <img src="/images/favicon_axiom.png" className="h-14 w-auto object-contain" />
         </a>
         <p className="mb-8 max-w-[15rem] text-sm text-foreground/80">
           <span>
