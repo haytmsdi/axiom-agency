@@ -7,9 +7,9 @@ export default function ConditionsDutilisationPage() {
     <>
       <div className="flex flex-col items-center overflow-clip z-20">
         <InteriorBanner />
-        <TextContent />
+          <TextContent />
       </div>
       <ParticleNetwork />
-    </>
+          </>
   );
 }
