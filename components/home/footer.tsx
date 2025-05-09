@@ -15,7 +15,7 @@ return (
   <SectionTag {...transitionProps} className="overflow-hidden relative z-10 px-5 md:px-8 lg:px-0 py-16 pb-5">
     <div className="mx-auto flex w-full flex-wrap justify-between gap-6 lg:max-w-7xl lg:flex-nowrap lg:gap-20">
       <div className="w-full lg:w-[30%] lg:max-w-[24rem]">
-        <a className="mb-6 block" href="/">
+        <a className="mb-6 inline-block" href="/">
           <img src="/images/favicon_axiom.png" className="h-14 w-auto object-contain" />
         </a>
         <p className="mb-8 max-w-[15rem] text-sm text-foreground/80">
