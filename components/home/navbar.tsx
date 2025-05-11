@@ -47,7 +47,7 @@ export default function Navbar() {
                 </a>
               );
             })}
-            <a className={`inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 p-3 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 w-fit flex justify-center items-center ml-4`} href="https://axiom-labs.vercel.app/auth/login">
+            <a className={`inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 p-3 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 w-fit flex justify-center items-center ml-4`} href="https://axiom-core.com">
               <span>
                 Connexion
               </span>
@@ -107,7 +107,7 @@ export default function Navbar() {
             <li className="w-full flex flex-col gap-4 items-center mt-4">
               <a 
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 p-3 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 w-[80%]" 
-                href="https://axiom-labs.vercel.app/auth/login"
+                href="https://axiom-core.com"
                 onClick={() => setIsOpen(false)}
               >
                 <span>
