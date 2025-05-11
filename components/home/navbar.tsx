@@ -2,18 +2,42 @@
 import { useState, useEffect } from "react";
 import ToggleTheme from "@/components/toggle-theme";
 import cn from "@/lib/utils";
-import { motion } from "framer-motion"; ;
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export default function Navbar() { 
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const { theme } = useTheme();
   
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (typeof window !== 'undefined') {
+        if (window.scrollY > lastScrollY) { // si on scroll vers le bas
+          setShow(false); 
+        } else { // si on scroll vers le haut
+          setShow(true);  
+        }
+        setLastScrollY(window.scrollY);
+      }
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+
+      // Nettoyage
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
 
   if (!mounted) return null;
 
@@ -31,7 +55,10 @@ export default function Navbar() {
   const transitionProps = { variants: transitionVariants[TRANSITION_ANIM_TYPE], initial: "hidden", whileInView:"show", viewport: { once: true, amount: 0 }, };
 
   return (
-    <SectionTag {...transitionProps} className="fixed top-0 w-full shadow-none bg-background border-b border-secondary z-50">
+    <SectionTag {...transitionProps} className={cn(
+      "fixed top-0 w-full shadow-none bg-background border-b border-secondary z-50 transition-transform duration-300",
+      !show && "-translate-y-full"
+    )}>
       <div className="hidden lg:block animate-in fade-in zoom-in p-4">
         <div className="max-w-7xl mx-auto px-3 md:px-6 lg:px-0 flex justify-between items-center">
           <a className="font-bold text-xl flex gap-3 items-center" href="/">
