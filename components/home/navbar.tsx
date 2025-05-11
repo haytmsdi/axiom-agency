@@ -17,7 +17,12 @@ export default function Navbar() {
 
   if (!mounted) return null;
 
-  const routeList = [ { label: "Nos Services", href: "#services4" }, { label: "Notre Processus", href: "#steps4" }, { label: "FAQ", href: "#faq" }, { label: "", href: "#" }, ];
+  const routeList = [ 
+    { label: "Nos Services", href: "#services4" }, 
+    { label: "Notre Processus", href: "#steps4" }, 
+    { label: "FAQ", href: "#faq" }, 
+  ];
+
   const ANIM_DURATION = parseFloat("0");
   const ANIM_EASING = JSON.parse("[0,0,1,1]");
   const TRANSITION_ANIM_TYPE = "NONE";
@@ -26,7 +31,7 @@ export default function Navbar() {
   const transitionProps = { variants: transitionVariants[TRANSITION_ANIM_TYPE], initial: "hidden", whileInView:"show", viewport: { once: true, amount: 0 }, };
 
   return (
-    <SectionTag {...transitionProps} className="top-0 shadow-none bg-background border-b border-secondary">
+    <SectionTag {...transitionProps} className="fixed top-0 w-full shadow-none bg-background border-b border-secondary z-50">
       <div className="hidden lg:block animate-in fade-in zoom-in p-4">
         <div className="max-w-7xl mx-auto px-3 md:px-6 lg:px-0 flex justify-between items-center">
           <a className="font-bold text-xl flex gap-3 items-center" href="/">
@@ -55,7 +60,10 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div className={cn( "block lg:hidden shadow-sm w-full py-4 animate-in fade-in zoom-in", isOpen && "bg-zinc-100 dark:bg-zinc-800", )} >
+      <div className={cn(
+        "block lg:hidden w-full py-4 animate-in fade-in zoom-in",
+        isOpen && "bg-background"
+      )}>
         <div className="flex justify-between mx-[10px]">
           <div className="flex gap-[50px] text-[16px] items-center select-none">
             <a className="font-bold text-xl flex gap-2 items-center" href="/">
@@ -64,41 +72,59 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-1">
             <ToggleTheme />
-            <div className="flex items-center lg:hidden">
-              <button onClick={() =>
-                setIsOpen(!isOpen)} className="lg:hidden rounded-md p-2" > {isOpen ? (
-                  <X className="w-6 h-6 text-foreground" />
-                ) : (
-                  <Menu className="w-6 h-6 text-foreground" />
-                )}
-              </button>
-              <nav className={`lg:hidden absolute top-full left-0 w-full bg-background rounded-b-xl shadow-lg transform transition-all duration-300 ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"}`} >
-                <ul className="flex flex-col items-center py-6 gap-4">
-                  {routeList.map((link, index) => (
-                    <li key={index}>
-                      <a className={`text-lg transition-colors hover:text-primary`} href={link.href}>
-                        <span>
-                          {link.label}
-                        </span>
-                      </a>
-                    </li>
-                  ))}
-                  <li className="w-full flex flex-col gap-4 items-center mt-4">
-                    <a className={`inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 p-3 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 w-[80%]`} href="https://axiom-labs.vercel.app/auth/login">
-                      <span>
-                        Connexion
-                      </span>
-                    </a>
-                    <a className={`inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 p-3 bg-primary text-primary-foreground shadow hover:bg-primary/90 w-[80%]`} href="https://axiom.fillout.com/book-call">
-                      <span className="dark:text-[#000000]">
-                        Appel d'audit gratuit
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="lg:hidden rounded-md p-2 hover:bg-secondary/10 transition-colors"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6 text-foreground" />
+              ) : (
+                <Menu className="w-6 h-6 text-foreground" />
+              )}
+            </button>
           </div>
+        </div>
+        <div 
+          className={cn(
+            "lg:hidden absolute left-0 w-full bg-background border-b border-secondary transition-all duration-300 ease-in-out",
+            isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+          )}
+        >
+          <ul className="flex flex-col items-center py-6 gap-4">
+            {routeList.map((link, index) => (
+              <li key={index}>
+                <a 
+                  className="text-lg transition-colors hover:text-primary" 
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <span>
+                    {link.label}
+                  </span>
+                </a>
+              </li>
+            ))}
+            <li className="w-full flex flex-col gap-4 items-center mt-4">
+              <a 
+                className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 p-3 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 w-[80%]" 
+                href="https://axiom-labs.vercel.app/auth/login"
+                onClick={() => setIsOpen(false)}
+              >
+                <span>
+                  Connexion
+                </span>
+              </a>
+              <a 
+                className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 p-3 bg-primary text-primary-foreground shadow hover:bg-primary/90 w-[80%]" 
+                href="https://axiom.fillout.com/book-call"
+                onClick={() => setIsOpen(false)}
+              >
+                <span className="dark:text-[#000000]">
+                  Appel d'audit gratuit
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </SectionTag>

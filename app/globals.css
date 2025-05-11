@@ -29,9 +29,9 @@
     --chart-3: 0 0% 60%;
     --chart-4: 0 0% 40%;
     --chart-5: 0 0% 10%;
-}
+  }
 
-[data-theme='dark'] {
+  [data-theme='dark'] {
     --background: 0 0% 6%;
     --foreground: 0 0% 90%;
     --card: 0 0% 10%;
@@ -57,7 +57,7 @@
     --chart-3: 0 0% 60%;
     --chart-4: 0 0% 40%;
     --chart-5: 0 0% 10%;
-}
+  }
 }
 
 @layer base {
@@ -67,15 +67,24 @@
 
   body {
     @apply box-border bg-background text-foreground;
-    /* Apply body font to body elements */
+    /* Apply Inter font to body elements */
     @apply font-inter;
   }
 
-  /* Apply headings font to all headings */
+  /* Apply Space Grotesk font to all headings */
   h1,
   h2,
-  h3 {
-    @apply font-montserrat;
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-space-grotesk;
+  }
+
+  /* Apply Space Grotesk font to CTA buttons */
+  button,
+  .cta-button {
+    @apply font-space-grotesk;
   }
 }
 
